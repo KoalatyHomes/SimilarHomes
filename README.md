@@ -15,25 +15,25 @@
     "Image_url" : "String url", 
     "Price" : "Number", 
     "Address" : "String address", 
-    "Region" : String", 
+    "Region" : "String", 
     "Bedroom_num" : "Number", 
     "Bathroom_num" : "Number", 
-    "Square_footage" : " Number", 
+    "Square_footage" : "Number", 
     "Description" : "String", 
     "Mortgage" : "Number", 
     "New" : "boolean", 
     "Price_change" : "Number"}
 ```
 
-### Add restaurant
-  * POST `/api/similarListings`
+### Add listing
+  * POST `/api/listings`
 
 **Success Status Code:** `201`
 
 **Request Body**: Expects JSON with the following keys.
 
 ```json
-    { "_id": ObjectId(), 
+    { 
     "Image_url" : "String url", 
     "Price" : "Number", 
     "Address" : "String address", 
@@ -48,8 +48,8 @@
 ```
 
 
-### Update similar listing info
-  * PATCH `/api/similarListings/:id`
+### Update listing info
+  * PATCH `/api/listings/:id`
 
 **Path Parameters:**
   * `id` listing id
@@ -59,24 +59,24 @@
 **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
 ```json
-    { "_id": ObjectId(), 
-    "Image_url" : "String url", 
-    "Price" : "Number", 
-    "Address" : "String address", 
-    "Region" : String", 
-    "Bedroom_num" : "Number", 
-    "Bathroom_num" : "Number", 
-    "Square_footage" : " Number", 
-    "Description" : "String", 
-    "Mortgage" : "Number", 
-    "New" : "boolean", 
-    "Price_change" : "Number"}
+    { "_id": "ObjectId()", 
+    "image_url" : "String url", 
+    "price" : "Number", 
+    "address" : "String address", 
+    "region" : String", 
+    "bedroom_num" : "Number", 
+    "bathroom_num" : "Number", 
+    "square_footage" : " Number", 
+    "description" : "String", 
+    "mortgage" : "Number", 
+    "new" : "boolean", 
+    "price_change" : "Number"}
 ```
 
-### Delete similar listing
-  * DELETE `/api/similarListings/:id`
+### Delete listing from users liked list
+  * DELETE `/api/likedListings/:id/`
 
 **Path Parameters:**
-  * `id` restaurant id
+  * `id` likedListing id
 
 **Success Status Code:** `204`
